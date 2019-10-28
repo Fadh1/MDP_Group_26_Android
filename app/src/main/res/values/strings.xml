@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">MDP26</string>
+    <string name="btStatusOffline">NOT CONNECTED</string>
+    <string name="searchDevice">Searching for devices...</string>
+    <string name="searchDone">Device found:</string>
+    <string name="setWaypoint">Set Waypoint</string>
+    <string name="setStart">Set Start Point</string>
+    <string name="onWaypoint">Selecting Waypoint</string>
+    <string name="onStart">Selecting Start Point</string>
+    <string name="reconfig_instruct">Enter your string commands below.
+        Afterwards, to apply the commands to the robot, select F1 or F2.</string>
+    <string name="dialog_message">You have selected</string>
+
+    <!-- Android Controller Navigation String Commands -->
+    <string name="navFwd">Android Controller: Move Forward</string>
+    <string name="navLeft">Android Controller: Turn Left</string>
+    <string name="navRight">Android Controller: Turn Right</string>
+    <string name="navRev">Android Controller: Move Backwards</string>
+
+
+    <!-- String Commands from message senders -->
+    <string name="fwd">Move Forward</string>
+    <string name="left">Turn Left</string>
+    <string name="right">Turn Right</string>
+    <string name="back">Move Backwards</string>
+
+    <!-- myStatus strings -->
+    <string name="neutral"> </string>
+    <string name="moving">Moving</string>
+    <string name="stop">Stop</string>
+    <string name="calibrating">Calibrating robot...</string>
+    <string name="startexp">Start Exploration</string>
+    <string name="endexp">End Exploration</string>
+    <string name="startfp">Start Fastest Path</string>
+    <string name="endfp">End Fastest Path</string>
+    <string name="error">Error!</string>
+
+</resources>

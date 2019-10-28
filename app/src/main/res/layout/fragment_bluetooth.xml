@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="BluetoothFragment">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="148dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/messageText"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="63dp"
+        android:background="@color/papaya_whip"
+        android:text="Bluetooth"
+        android:textColor="@color/black"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/searchBtn"
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btSend"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="427dp"
+        android:layout_marginTop="423dp"
+        android:layout_marginEnd="27dp"
+        android:text="Discover"
+
+        android:textSize="@dimen/font_size_small"
+        app:backgroundTint="@color/deep_pink"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/deviceSearchStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchBtn"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="15dp"
+
+        android:text="Bluetooth Devices:"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_medium" />
+
+    <TextView
+        android:id="@+id/pairedDeviceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchBtn"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="318dp"
+        android:layout_marginLeft="124dp"
+        android:layout_marginTop="14dp"
+        android:layout_toRightOf="@+id/deviceSearchStatus"
+
+        android:text="Paired Devices:"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_medium" />
+
+    <ListView
+        android:id="@+id/listNewDevice"
+        android:layout_width="264dp"
+        android:layout_height="226dp"
+        android:layout_below="@+id/deviceSearchStatus"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/white"
+        android:listSelector="#bcbcbc" />
+
+    <ListView
+        android:id="@+id/pairedDeviceList"
+        android:layout_width="259dp"
+        android:layout_height="230dp"
+        android:layout_below="@+id/pairedDeviceText"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="27dp"
+        android:layout_toEndOf="@+id/listNewDevice"
+        android:layout_toRightOf="@+id/listNewDevice"
+        android:background="@color/white"
+        android:listSelector="#bcbcbc" />
+
+    <Button
+        android:id="@+id/connectBtn"
+        android:layout_width="137dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="30dp"
+        android:layout_below="@+id/pairedDeviceList"
+        android:text="Connect"
+        android:textSize="@dimen/font_size_small"
+        app:backgroundTint="@color/deep_pink" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="37dp"
+        android:background="@color/papaya_whip"
+        android:text="Communication"
+        android:textColor="@color/colorActionBar"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/deviceOutputMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="19dp"
+
+        android:text="Incoming:"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_medium" />
+
+    <TextView
+        android:id="@+id/deviceInputMsg"
+        android:layout_width="111dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="310dp"
+        android:layout_marginLeft="194dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="107dp"
+        android:layout_toRightOf="@+id/deviceOutputMsg"
+
+        android:text="Outgoing:"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_medium"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/incomingText"
+        android:layout_width="257dp"
+        android:layout_height="216dp"
+        android:layout_below="@+id/deviceOutputMsg"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        android:hint="Waiting for incoming message..."
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_small" />
+
+    <EditText
+        android:id="@+id/messageText"
+        android:layout_width="264dp"
+        android:layout_height="218dp"
+        android:layout_below="@+id/deviceInputMsg"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@+id/incomingText"
+        android:layout_toRightOf="@+id/incomingText"
+        android:background="@color/white"
+        android:hint="Enter your messages here!"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_small" />
+
+    <Button
+        android:id="@+id/btSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="482dp"
+        android:layout_marginTop="39dp"
+        android:text="Send"
+        android:textSize="@dimen/font_size_small"
+        app:backgroundTint="@color/deep_pink" />
+
+</RelativeLayout>

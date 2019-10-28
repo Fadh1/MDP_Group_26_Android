@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="MessagesFragment">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="56dp"
+        android:text="String Reconfiguration"
+        android:textColor="@color/colorActionBar"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/tv_instruction"
+        android:layout_width="468dp"
+        android:layout_height="84dp"
+
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="31dp"
+        android:text="@string/reconfig_instruct"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/et_f1"
+        android:layout_width="450dp"
+        android:layout_height="68dp"
+        android:layout_below="@id/textView3"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="127dp"
+        android:background="@drawable/textbar"
+        android:hint="Edit F1"
+        android:textSize="@dimen/font_size_medium" />
+
+    <Button
+        android:id="@+id/btn_f1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_f1"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="426dp"
+        android:layout_marginTop="23dp"
+        app:backgroundTint="@color/deep_pink"
+
+        android:text="F1"
+        android:textSize="30dp" />
+
+    <EditText
+        android:id="@+id/et_f2"
+        android:layout_width="450dp"
+        android:layout_height="64dp"
+        android:layout_below="@+id/btn_f1"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/textbar"
+        android:hint="Edit F2"
+        android:textSize="@dimen/font_size_medium" />
+
+    <Button
+        android:id="@+id/btn_f2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_f2"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="426dp"
+        android:layout_marginTop="30dp"
+        app:backgroundTint="@color/deep_pink"
+        android:text="F2"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="213dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_f2"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="26dp"
+        android:text="Save Commands"
+        android:textSize="@dimen/font_size_small"
+        app:backgroundTint="@color/deep_pink" />
+
+    <Button
+        android:id="@+id/btn_retrieve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_save"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="26dp"
+        app:backgroundTint="@color/deep_pink"
+        android:text="Retrieve Saved Commands"
+        android:textSize="@dimen/font_size_small" />
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_retrieve"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="26dp"
+        app:backgroundTint="@color/deep_pink"
+        android:text="Reset Commands"
+        android:textSize="@dimen/font_size_small" />
+
+
+</RelativeLayout>
