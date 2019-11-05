@@ -25,17 +25,11 @@ public class BluetoothChat extends Thread {
     private static OutputStream myOutPutStream;
     private static BluetoothDevice myBluetoothConnectionDevice;
 
-
-    // To maintain the bluetooth connection, sending the data, and receiving incoming messages
-    // through input/output streams.
     public static BluetoothDevice getBluetoothDevice(){
         return myBluetoothConnectionDevice;
     }
 
-    // Start Bluetooth Chat
     public static void startChat(BluetoothSocket socket) {
-
-        Log.d(TAG, "ConnectedThread: Starting");
 
         mySocket = socket;
         InputStream tempIn = null;
@@ -51,21 +45,16 @@ public class BluetoothChat extends Thread {
         myInputStream = tempIn;
         myOutPutStream = tempOut;
 
-
-        // Buffer store for the stream
         byte[] buffer = new byte[1024];
 
-        // Bytes returned from the read()
         int bytes;
 
         while (true) {
-            // Read from the InputStream
             try {
                 bytes = myInputStream.read(buffer);
                 String incomingMessage = new String(buffer, 0, bytes);
                 Log.d(TAG, "InputStream: " + incomingMessage);
 
-                // Broadcast Incoming Message
                 Intent incomingMsgIntent = new Intent("IncomingMsg");
                 incomingMsgIntent.putExtra("receivingMsg", incomingMessage);
                 LocalBroadcastManager.getInstance(myContext).sendBroadcast(incomingMsgIntent);
@@ -73,18 +62,15 @@ public class BluetoothChat extends Thread {
 
             } catch (IOException e) {
 
-                // Broadcast Connection Message
                 Intent connectionStatusIntent = new Intent("btConnectionStatus");
                 connectionStatusIntent.putExtra("ConnectionStatus", "disconnect");
                 connectionStatusIntent.putExtra("Device",myBluetoothConnectionDevice);
                 LocalBroadcastManager.getInstance(myContext).sendBroadcast(connectionStatusIntent);
 
-                Log.d(TAG, "CHAT SERVICE: Closed!!!");
                 e.printStackTrace();
                 break;
 
             } catch (Exception e){
-                Log.d(TAG, "CHAT SERVICE: Closed 2!!!: "+ e);
                 e.printStackTrace();
 
             }
@@ -93,7 +79,6 @@ public class BluetoothChat extends Thread {
     }
 
 
-    // To write outgoing bluetooth messages
     public static void write(byte[] bytes) {
 
         String text = new String(bytes, Charset.defaultCharset());
@@ -106,8 +91,6 @@ public class BluetoothChat extends Thread {
         }
     }
 
-
-    // To shut down bluetooth connection
     public void cancel() {
         try {
             mySocket.close();
@@ -118,25 +101,17 @@ public class BluetoothChat extends Thread {
 
 
 
-    // To start Chat Service
     static void connected(BluetoothSocket mySocket, BluetoothDevice myDevice, Context context) {
-        Log.d(TAG, "Connected: Starting");
 
         //showToast("Connection Established With: "+myDevice.getName());
         myBluetoothConnectionDevice = myDevice;
         myContext = context;
-        //Start thread to manage the connection and perform transmissions
         startChat(mySocket);
 
 
     }
 
-    /*
-        Write to ConnectedThread in an unsynchronised manner
-    */
     public static void writeMsg(byte[] out) {
-
-        Log.d(TAG, "write: Write Called.");
         write(out);
 
     }
